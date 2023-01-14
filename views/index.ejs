@@ -12,8 +12,9 @@
     <div class="container">
         <h1>My Wishlist</h1>
 
-        <form action="/wish" method="POST">
+        <form action="/wish" method="post" enctype="multipart/form-data">
             <input type="text" name="userWish" placeholder="add a wish">
+            <input type="file" name="userFile">
             <button type="submit">Add a wish</button>
         </form>
 
@@ -21,7 +22,8 @@
             <ul>
                 <ul>
                     <% for(let i =0; i < myWishes.length; i++ ) { %>
-                        <li> <%= myWishes[i].description %> </li>
+                        <li><img src="<%= myWishes[i].imageUrl %>" alt=""> <%= myWishes[i].description %> </li>
+
                     <% } %>
                 
 
